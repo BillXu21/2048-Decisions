@@ -1,0 +1,8 @@
+# Literature anchors
+
+- Marcin Szubert and Wojciech Jaśkowski (2014), [Temporal Difference Learning of N-Tuple Networks for the Game 2048](https://doi.org/10.1109/CIG.2014.6932907), Fig. 6: `r(current) + V(afterstate)` for action choice, next reward for the previous afterstate target. Published additive tables and long game budgets are not the learned V1–V3 embedding branches or matched pilot controls.
+- Kiminori Matsuzaki (2021), [Developing Value Networks for Game 2048 with Reinforcement Learning](https://doi.org/10.2197/ipsjjip.29.336), Eq. 1: afterstate next-reward targets, and CNN value learning at much longer budgets. The local residual CNN, D4 averaging, replay, hard target copies and scaled Huber regression are modifications, not a reproduction. The paper's final method did not use symmetry averaging.
+- John Schulman et al. (2017), [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347), background for clipped policy ratios. The local architecture, warm critics, GAE settings, epoch-prefix control and benchmarks are project evidence, not claims made by the paper.
+- Hado van Hasselt, Arthur Guez and David Silver (2016), [Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/abs/1509.06461), background for a proposed selection/evaluation separation. The recorded TD max backup uses a lagged network, **not** an implemented Double Q experiment.
+
+Late-stage TD variants, optimistic initialization and restart sampling were literature context rather than tested controls in the bounded TD pilot. Read [the pilot](../evidence/td_initial_pilot.md) for the local reward and modeling conventions. No third-party papers are redistributed.
