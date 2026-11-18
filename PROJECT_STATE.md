@@ -18,3 +18,7 @@ See [hashes](references/artifact_index.md), [CNN confirmation](evidence/cnn_ppo_
 Headline arithmetic and selected checkpoint bytes were independently checked from stored files, not independently retrained or replayed. Historical reports include parity and resume checks; most architecture studies used one training seed. Missing source Git identity, absent raw V1 final arrays, and unexecuted work are recorded in the [reproduction guide](references/reproduction.md).
 
 Possible next experiments, **not implemented here or committed plans**: compare stable one-step and longer backups over several seeds with matched starting weights and compute; evaluate Double Q-style selection/evaluation separation and verify calibration against complete own-policy returns; test joint imitation plus value/terminal calibration and compare to scratch; measure PPO gameplay benefit of epoch reuse at fixed minibatch size; audit exact compiled optimizer parity over many chunks; compare architectures under matched data and compute. Longer or full-episode PPO rollouts remain untested as a learning intervention.
+
+## Current planning handoff
+
+Read the [draft attention and spatial pattern memory plan](.agents/notes/draft/architecture/2026-11-18-pattern-memory-and-attention.md) for the proposed expert-data audit, adjacent and nonadjacent pattern analysis, and BC-to-PPO comparison. Start with the data and pattern packet. Run budgets and architecture choices are open.
