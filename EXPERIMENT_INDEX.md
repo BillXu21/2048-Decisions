@@ -15,6 +15,9 @@ Ordering follows research dependencies, not filesystem timestamps. All listed di
 | `jax_experiments/afterstate_td/` | One-step pilot, scratch and teacher-return warm starts for CNN and scalar lookup tables | [TD pilot](evidence/td_initial_pilot.md) |
 | `jax_experiments/afterstate_td/followup_01/`, `followup_02/`, `followup_03/` | 3×3 scratch continuations; early refresh advantage reversed; one divergence stop in matched-time packet | [TD follow-ups](evidence/td_followups.md) |
 | `jax_experiments/afterstate_td/bc_initialized/`, `bc_repair_01/` | BC calibration and separate head-only repair rejected; scratch fallback 26,999,808 new transitions, one arm stopped, final held-out complete | [Long-horizon TD](evidence/td_long_horizon.md) |
+| `jax_experiments/expert_dataset_audit_1a/`, `spatial_pattern_survey_1b/` | Bounded expert-data audit and 120-pair D4 survey; 11-orbit exact lookup proposed; pattern associations are not gameplay effects | [Attention/pattern progress](evidence/attention_pair_2026-11-20.md) |
+| `jax_experiments/attention_pair_preflight_2a/`, `attention_pair_feasibility_2b/`, `attention_pair_overnight_2b2/` | A/B/C architecture integration and short one-seed PPO; 249,856 transitions/arm, no established lookup advantage | [Attention/pattern progress](evidence/attention_pair_2026-11-20.md) |
+| `jax_experiments/attention_pair_active/` | Infrastructure simplification and CUDA parity; 12-epoch one-seed BC, best selected A/e12, B/e12, C/e8; longer PPO not run | [Attention/pattern progress](evidence/attention_pair_2026-11-20.md) |
 
 ## Evidence labels
 
