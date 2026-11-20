@@ -19,6 +19,13 @@ Headline arithmetic and selected checkpoint bytes were independently checked fro
 
 Possible next experiments, **not implemented here or committed plans**: compare stable one-step and longer backups over several seeds with matched starting weights and compute; evaluate Double Q-style selection/evaluation separation and verify calibration against complete own-policy returns; test joint imitation plus value/terminal calibration and compare to scratch; measure PPO gameplay benefit of epoch reuse at fixed minibatch size; audit exact compiled optimizer parity over many chunks; compare architectures under matched data and compute. Longer or full-episode PPO rollouts remain untested as a learning intervention.
 
-## Current planning handoff
+## Current research handoff (2026-11-20)
 
-Read the [draft attention and spatial pattern memory plan](.agents/notes/draft/architecture/2026-11-18-pattern-memory-and-attention.md) for the proposed expert-data audit, adjacent and nonadjacent pattern analysis, and BC-to-PPO comparison. Start with the data and pattern packet. Run budgets and architecture choices are open.
+Read the [attention and exact-pair experiment progress report](evidence/attention_pair_2026-11-20.md) before planning new model work. This is a text-first handoff of local-agent reports, not a separate replay or independent experiment audit.
+
+- Packet 1A/1B audited a bounded expert sample, surveyed 120 spatial cell pairs, and selected a small exact-pair lookup. Packets 2A–2B.2 implemented attention-only (A, 30,849 parameters), parameter-matched nonlookup (B, 34,181), and exact-pair memory (C, 34,182). One seed completed 249,856 PPO transitions/arm from one-epoch BC origins, with mean PPO development scores **12,274.9 / 10,529.0 / 11,086.0** for A/B/C on 128 paired games. No lookup superiority established.
+- Packets 3A–3C simplified the active Windows/WSL launch and paired recovery path while preserving historical source and checkpoints. Production CUDA parity was locally reported as passing; Packet 4A later confirmed the corrected launcher's successful live exit.
+- Packet 4A trained **12 BC epochs per arm**, selecting **A/e12 = 13,473**, **B/e12 = 14,676**, **C/e8 = 14,732** mean on **128 BC development games**. These selected origins have **not** undergone PPO. Performance is substantially below the earlier 4.8M-parameter CNN BC reference, but the protocols and datasets are not matched enough to isolate model capacity.
+- **Next discussion, not an authorized run:** inspect the actual unique expert examples/games used by BC and consider whether model capacity (potentially ~250k–1M parameters), architectural allocation, or training-data coverage is the best lever. The proposed ~2M-transition PPO learning curve was not launched. Keep existing A/B/C artifacts and decisions; no scaling architecture or GPU budget has been approved.
+
+The [older spatial pattern plan](.agents/notes/draft/architecture/2026-11-18-pattern-memory-and-attention.md) records the initial rationale but is not the current task list or an implemented decision. New unverified drafts follow the global decisions skill's `.agents/drafts/` convention.
